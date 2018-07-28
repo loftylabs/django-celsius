@@ -1,8 +1,8 @@
-from celsius.backends import _get_backend
+from celsius.backends import get_backend
 from celsius.models import Event
 
 
-backend = _get_backend()()
+backend = get_backend()
 
 
 class VisitableObjectMixin:

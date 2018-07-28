@@ -15,7 +15,7 @@ class CelsiusBackend:
 
 
 
-def _get_backend():
+def get_backend():
     """
     Returns the currently configured backend
     """
@@ -24,5 +24,5 @@ def _get_backend():
     parts = CELSIUS_BACKEND.split('.')
     mod = import_module(".".join(parts[:-1]))
     class_name = parts[-1]
-    
-    return getattr(mod, class_name)
+
+    return getattr(mod, class_name)()
